@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item-scroll,
+.item-scroll::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-scroll {
+  width: 20px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.item-scroll::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: black;
+  margin-left: -4px;
+  top: 5px;
+  border-radius: 50%;
+  animation: 1.5s scroll cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.5);
+  }
+}
