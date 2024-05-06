@@ -9,8 +9,13 @@ import Link from 'next/link'
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { FaGithubSquare } from 'react-icons/fa'
+import { useSectionInView } from '@/lib/hooks'
+import { useActiveSectionContext } from '@/context/active-section-context'
 
 export default function Intro() {
+
+    const { ref } = useSectionInView("Home", 0.5);
+    const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
     const el = useRef(null);
 
@@ -35,7 +40,10 @@ export default function Intro() {
     }, []);
 
   return (
-      <section className='mb-28 max-w-[50rem] text-center sm:mb-0'>
+      <section
+          ref={ref}
+          id='home'
+          className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
           <div className='flex items-center justify-center'>
               <div className='relative'>
                   <motion.div
@@ -89,10 +97,15 @@ export default function Intro() {
                   delay:0.1,
               }}
           >
-              <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-105 transition'> Coffee with Me <BsArrowRight className='opacity-70 group-hover:translate-x-1  transition'/> </Link>
-              <a className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition cursor-pointer border border-black/10' href='/cv.pdf' download>Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
-              <a className='bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.3rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border border-black/10' href='https://www.linkedin.com/in/iamsuryakant/' target='_blank'><BsLinkedin /></a>
-              <a className='bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.3rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border border-black/10' href='https://www.github.com/iamsuryakant' target='_blank'><FaGithubSquare/></a>
+              <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-105 transition'
+                  onClick={() => {
+                      setActiveSection("Contact");
+                      setTimeOfLastClick(Date.now());
+                  }}
+              > Coffee with Me <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' /> </Link>
+              <a className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10' href='/cv.pdf' download>Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
+              <a className='bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full text-[1.3rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60' href='https://www.linkedin.com/in/iamsuryakant/' target='_blank'><BsLinkedin /></a>
+              <a className='bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full text-[1.3rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer orderBlack dark:bg-white/10 dark:text-white/60' href='https://www.github.com/iamsuryakant' target='_blank'><FaGithubSquare/></a>
           </motion.div>
     </section>
   )

@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.item-scroll,
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+/* .item-scroll,
 .item-scroll::before {
   position: absolute;
   left: 50%;
@@ -41,4 +53,4 @@
     opacity: 0;
     transform: translateY(10px) scale(0.5);
   }
-}
+} */
