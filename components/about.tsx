@@ -20,7 +20,7 @@ export default function About() {
           <p className="mb-3">
               Hey Everyone! I&apos;m a <span className='font-medium'>full stack developer</span> specializing in <span className='font-medium italic underline'>MERN (MongoDB, Express, React, Node.js) stack development</span> with <span className='font-medium'>2 years</span> of experience in building robust, scalable, and efficient web applications, I excel in creating seamless <span className='font-medium italic'>user experiences and backend logic</span>.
                I am always looking to learn new technologies. I am currently looking for a{" "}
-              <span className="font-medium">full-time position</span> as a software developer.
+              <span className="font-medium">full-time position</span> as a <span className='font-medium text-red-600'>software developer</span>.
           </p>
           {/* <p>
               <span className="italic">When I'm not coding</span>, I enjoy to listen to music and to watch movies. I also enjoy{" "}

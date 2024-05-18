@@ -68,21 +68,21 @@ export const projectsData = [
     title: "Emart",
     description:
       "A responsive e-commerce website built with HTML, CSS, and JavaScript. Featuring a user-friendly interface, product showcase, and shopping cart functionality.",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    tags: ["React JS", "Tailwind CSS", "MongoDB", "Express", "Node JS"],
     imageUrl: emart,
   },
   {
     title: "Forkify",
     description:
       "A user-interactive website that contains over 10000+ recipes. It has features like filtering, sorting and Bookmarks.",
-    tags: ["React", "Firebase", "Tailwind", "LocalStorage"],
+    tags: ["React JS", "Firebase", "Tailwind CSS", "LocalStorage"],
     imageUrl: forkify,
   },
   {
     title: "Secure Data Sharing",
     description:
       "Created a chat application prototype with end-to-end encryption. It has a group chat system functionality where admin controls and message moderation.",
-    tags: ["React", "Firebase", "Tailwind"],
+    tags: ["React JS", "Firebase", "Tailwind CSS", "ExpressJS", 'MongoDB'],
     imageUrl: secureDataSharing,
   },
 ] as const;

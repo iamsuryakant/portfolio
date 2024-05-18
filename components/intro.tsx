@@ -76,7 +76,7 @@ export default function Intro() {
           animate={{ opacity: 1, y: 0 }}
           >
                   <h1 className='mt-2 font-bold text-4xl flex items-center justify-center'>Suryakant Thakur</h1>
-                  <div className='mt-2 font-serif text-2xl flex items-center justify-center'>I&apos;m a <span className='ml-2 text-red-600 dotted' ref={el}></span></div>
+                  <div className='mt-2 font-serif text-2xl flex items-center justify-center'>I&apos;m a <span className='ml-2 font-medium text-red-600 dotted' ref={el}></span></div>
         </motion.div>
 
           {/* <motion.p 
