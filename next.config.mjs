@@ -7,7 +7,6 @@ const nextConfig = {
     },
     distDir: 'out', // Where to export all pages
     trailingSlash: true,
-    assetPrefix: '.',
 
 
     // time in seconds of no pages generating during static
